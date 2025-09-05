@@ -1,24 +1,21 @@
 // Loading Screen
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.addEventListener('DOMContentLoaded', function() {
     const loadingScreen = document.getElementById('loading-screen');
     
-    // Hide loading screen faster for testing
     setTimeout(() => {
         if (loadingScreen) {
             loadingScreen.style.opacity = '0';
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
-                console.log('Loading screen hidden');
             }, 500);
         }
-    }, 1000); // Reduced from 3500ms to 1000ms
+    }, 1000);
     
-    // Fallback: Hide loading screen after window load
     window.addEventListener('load', () => {
         setTimeout(() => {
             if (loadingScreen && loadingScreen.style.display !== 'none') {
                 loadingScreen.style.display = 'none';
-                console.log('Loading screen hidden via fallback');
             }
         }, 2000);
     });
@@ -292,13 +289,11 @@ if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form data
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
         const message = formData.get('message');
         
-        // Simple validation
         if (!name || !email || !message) {
             showNotification('Please fill in all fields', 'error');
             return;
@@ -308,19 +303,15 @@ if (contactForm) {
             showNotification('Please enter a valid email address', 'error');
             return;
         }
-        
-        // Simulate form submission
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'SENDING...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-            this.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
+
+        // Open default mail client with pre-filled subject and body
+        const subject = encodeURIComponent(`Portfolio Contact: ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+        const mailto = `mailto:akshithkumar096@gmail.com?subject=${subject}&body=${body}`;
+
+        showNotification('Opening your email app to send the message…', 'info');
+        window.location.href = mailto;
+        this.reset();
     });
 }
 
@@ -429,21 +420,21 @@ function createParticles() {
     }
 }
 
-// Parallax scrolling effect
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
-    
-    const particles = document.getElementById('particles-container');
-    if (particles) {
-        particles.style.transform = `translateY(${rate}px)`;
-    }
-});
+if (!prefersReducedMotion) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        const particles = document.getElementById('particles-container');
+        if (particles) {
+            particles.style.transform = `translateY(${rate}px)`;
+        }
+    });
+}
 
-// Initialize particles
-document.addEventListener('DOMContentLoaded', createParticles);
+if (!prefersReducedMotion) {
+    document.addEventListener('DOMContentLoaded', createParticles);
+}
 
-// Typing effect for hero subtitle
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
@@ -459,33 +450,32 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Initialize typing effect
-window.addEventListener('load', () => {
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    if (heroSubtitle) {
-        const originalText = heroSubtitle.textContent;
-        setTimeout(() => {
-            typeWriter(heroSubtitle, originalText, 100);
-        }, 1000);
-    }
-});
+if (!prefersReducedMotion) {
+    window.addEventListener('load', () => {
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        if (heroSubtitle) {
+            const originalText = heroSubtitle.textContent;
+            setTimeout(() => {
+                typeWriter(heroSubtitle, originalText, 100);
+            }, 1000);
+        }
+    });
+}
 
-// Cursor trail effect
 let mouseX = 0;
 let mouseY = 0;
 let trail = [];
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    trail.push({ x: mouseX, y: mouseY, time: Date.now() });
-    
-    // Limit trail length
-    if (trail.length > 20) {
-        trail.shift();
-    }
-});
+if (!prefersReducedMotion) {
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        trail.push({ x: mouseX, y: mouseY, time: Date.now() });
+        if (trail.length > 20) {
+            trail.shift();
+        }
+    });
+}
 
 // Animate cursor trail
 function animateTrail() {
@@ -514,21 +504,22 @@ function animateTrail() {
     requestAnimationFrame(animateTrail);
 }
 
-// Create cursor trail canvas
-document.addEventListener('DOMContentLoaded', () => {
-    const canvas = document.createElement('canvas');
-    canvas.id = 'cursor-trail';
-    canvas.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 9998;
-        opacity: 0.7;
-    `;
-    document.body.appendChild(canvas);
-    animateTrail();
-});
+if (!prefersReducedMotion) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.createElement('canvas');
+        canvas.id = 'cursor-trail';
+        canvas.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.7;
+        `;
+        document.body.appendChild(canvas);
+        animateTrail();
+    });
+}
 
 // Window resize handler
 window.addEventListener('resize', () => {
@@ -554,9 +545,7 @@ function throttle(func, limit) {
 }
 
 // Apply throttling to scroll events
-window.addEventListener('scroll', throttle(() => {
-    // Existing scroll handlers are already defined above
-}, 16)); // ~60fps
+window.addEventListener('scroll', throttle(() => {}, 16));
 
 // Preload images and videos for better performance
 function preloadMedia() {
