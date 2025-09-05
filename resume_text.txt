@@ -1,0 +1,136 @@
+Work history
+Senior software
+Engineer III/ Game
+Developer
+Akshith
+Kumar
+Contact
+Address
+Bengaluru, India 560011
+Phone
++919686652243
+E-mail
+akshithkumar096@gmail.co
+m
+WWW
+Bold Profile
+Skills
+Unity 3d
+C#
+Unity ECS
+Multiplayer (Socket.Io,Unity
+Netcode for Entities)
+Unity Test Framework
+SOLID Principle
+I am a Software Development Engineer with a strong background in
+Unity3D and C#. My expertise extends to high-performance
+development using Unity ECS and creating multiplayer systems with
+both Socket.Io and Netcode for Entities. I have a deep
+understanding of core software engineering principles, including
+SOLID, and I apply a wide range of design patterns such as
+Singleton, MVC, Observer, Command, State, and Object Pooling to
+ensure code is clean, modular, and maintainable. I am proficient
+with the Unity Test Framework, which helps me deliver high-quality
+code and debug efficiently. I am looking for a role where I can
+apply my development skills to create engaging and polished
+products.
+Software Development Engineer III
+Mobile Premier League (MPL), Bangalore
+2025-07 -
+Current
+Engineered a central feature designed for
+seamless integration into various game projects.
+•
+Senior Software Engineer
+Quest Global, Bangalore
+2022-10 -
+2025-07
+Developed a Unity ECS level design tool with
+interactive inventory system and save
+functionality. Contributed to simulation projects
+using Unity3D.
+•
+CI/CD- Build Automation using Cake(C# make )
+and Jenkin's
+•
+Software Engineer/Unity Developer
+Pole To Win India Private Limited, Bangalore,India
+2021-04 -
+2022-10
+Developed a across-platform Avatar Selector
+Application for Android, iOS, WebGL, and
+Desktop, facilitating seamless communication
+between Unity and native platforms.
+•
+Built an endless runner game, applying Zenject
+for robust dependency injection.
+•
+Software Engineer II
+Juego Studio Private Limited, Mangluru
+Developed three endless runner and casual games,
+integrating unique features like drawing mechanics
+and real-time chat functionality via socket
+technology.
+2018-06 -
+2020-12
+PROJECTS
+EDUCATION
+Design
+Pattern(SingleTon,Observer)
+Zenject
+Build Automation (Jenkin's,
+C# Make)
+Version Control (Git,plastic
+SCM)
+Platform (Android, iOS,
+WebGL, Desktop,AR)
+State,Command,MVC
+Alnahsharun
+Back To Rockport
+Rummy project
+Slowmo 3d
+Runtime simulator
+Card Matching
+Mine Sweeper
+https://play.google.com/store
+/apps/details?id=com.moderndoctors.alnahshar
+un&hl=en_IN
+•
+https://apps.apple.com/tr/app/%D8%A7%D9%84
+%D9%86%D8%AD%D8%B4%D8%A9-
+run/id1473582650
+•
+https://play.google.com/store
+/apps/details?id=com.wmg.kiddkeo&hl=en_IN
+•
+https://apps.apple.com/in/app/back-
+to-rockport-the-game/id1526696178
+•
+https://drive.google.com/file/d
+/1DK51w3CuA7nscIv6VI9gdStrFSF4uO5H
+/view?usp=drivesdk
+•
+3d Hyper casual runner game with slow motion
+effect
+•
+https://drive.google.com/file/d
+/1yFv_ZkoIGL3CX3HyjvlXVPldudPa9l3J
+/view?usp=drivesdk
+•
+Unity simulation tool for building scene
+developed using
+•
+unity ECS and Netcode for entities
+•
+https://github.com/akshithkumar96
+/Card_match_making
+•
+https://github.com/akshithkumar96/Mine-
+Sweeper
+•
+Bachelor Of Engineering: Computer
+Science
+Sahyadri College of Engineering And Management
+- Mangalore
+Courses
+2018-05
