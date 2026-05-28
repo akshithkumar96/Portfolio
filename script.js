@@ -552,6 +552,7 @@ function preloadMedia() {
     const base = 'resource/';
     const mediaElements = [
         'AlnahshaRun.mp4',
+        'LilaBlack_Store_Video_1.mp4',
         'cardMatching.mp4',
         'MineSweeper.mp4',
         'Slow_3d_runner.mp4',
